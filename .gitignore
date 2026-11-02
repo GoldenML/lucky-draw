@@ -1,0 +1,15 @@
+# 学生名单等个人数据，不建议上传到公开仓库
+名单/*.txt
+
+# 全量名单（含真实姓名）
+人名.txt
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# 工具缓存与本地记录
+.workbuddy/

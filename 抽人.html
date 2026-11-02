@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎯 幸运抽人</title>
+    <link rel="stylesheet" href="./src/person.css" />
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <canvas id="confetti"></canvas>
+
+    <!-- 🌟 拖拽遮罩层（默认隐藏） -->
+    <div id="dropZone">
+      <div class="drop-text">松开鼠标，导入名单！</div>
+    </div>
+
+    <nav class="topbar">
+      <a href="抽奖.html" class="nav-pill">🎡 抽奖模式</a>
+      <a href="抽人.html" class="nav-pill active">🎯 抽人模式</a>
+    </nav>
+
+    <main class="main-content">
+      <div class="class-bar" id="classBar"></div>
+
+      <div class="stage">
+        <div class="stage-glow"></div>
+        <div class="name-box" id="nameBox">
+          <div class="name-text" id="nameText">准备开始</div>
+        </div>
+      </div>
+
+      <p class="hint" id="hint">按空格键，或点击下方按钮开始</p>
+
+      <button id="actionBtn" class="action-btn">
+        <span class="btn-icon">▶</span>
+        <span class="btn-label">开始抽人</span>
+      </button>
+
+      <div class="controls">
+        <input type="file" id="fileInput" accept=".txt" hidden />
+        <button id="uploadBtn" class="glass-btn">
+          <span>📁</span> 导入名单
+        </button>
+        <button id="resetBtn" class="glass-btn ghost">
+          <span>♻️</span> 重置已抽
+        </button>
+        <label class="switch">
+          <input type="checkbox" id="uniqueToggle" checked />
+          <span>不重复抽取</span>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="soundToggle" checked />
+          <span>音效</span>
+        </label>
+      </div>
+
+      <p id="status">正在读取 <b>人名.js</b> …</p>
+
+      <section class="history">
+        <div class="history-head">
+          已抽中 <span id="historyCount">0</span> 人
+        </div>
+        <div class="history-list" id="historyList">
+          <span class="empty">还没有抽到人～</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="./lib/gsap.min.js"></script>
+    <script src="./lib/sweetalert2.all.min.js"></script>
+    <script src="./src/starfield.js"></script>
+    <script src="./src/人名.js"></script>
+    <script src="./src/person.js"></script>
+  </body>
+</html>

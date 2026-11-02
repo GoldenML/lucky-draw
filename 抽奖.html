@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✨ 班级幸运大转盘</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+
+    <!-- 🌟 拖拽遮罩层（默认隐藏） -->
+    <div id="dropZone">
+      <div class="drop-text">松开鼠标，导入名单！</div>
+    </div>
+
+    <nav class="topbar">
+      <a href="抽奖.html" class="nav-pill active">🎡 抽奖模式</a>
+      <a href="抽人.html" class="nav-pill">🎯 抽人模式</a>
+    </nav>
+
+    <div class="main-content">
+      <div class="wheel-wrapper">
+        <div class="pointer"><div class="pointer-inner"></div></div>
+        <div class="wheel-glow"></div>
+        <canvas id="wheel" width="500" height="500"></canvas>
+        <button id="spinBtn">
+          <span>🎲</span>
+          <span>抽奖</span>
+        </button>
+      </div>
+
+      <div class="controls">
+        <input type="file" id="fileInput" accept=".txt" style="display: none" />
+        <button id="uploadBtn" class="glass-btn">
+          <span>📁</span> 点击导入名单.txt
+        </button>
+        <!-- 🌟 增加拖拽提示 -->
+        <p id="status">正在读取 <b>奖品.js</b> …</p>
+      </div>
+    </div>
+
+    <script src="./lib/gsap.min.js"></script>
+    <script src="./lib/sweetalert2.all.min.js"></script>
+    <script src="./src/starfield.js"></script>
+    <script src="./src/奖品.js"></script>
+    <script src="./src/script.js"></script>
+  </body>
+</html>
